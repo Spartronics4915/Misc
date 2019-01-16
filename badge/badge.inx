@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <_name>Spartronics Badge Maker</_name>
+
+    <id>dbadb.badgemaker</id>
+    <dependency type="executable" location="extensions">badge.py</dependency>
+    <dependency type="executable" location="extensions">inkex.py</dependency>
+
+    <param name="width" type="float" precision="4" 
+            min="50" max="500" _gui-text="width (mm)">
+        76.2
+    </param>
+
+    <param name="height" type="float" precision="4"  
+            min="50" max="500" _gui-text="height (mm)">
+        63.5 
+    </param>
+
+    <param name="cornerradius" type="float" precision="3"  
+            min="0" max="100" _gui-text="corner radius">
+        5
+    </param>
+
+    <param name="target"  type="enum"  _gui-text="Target:">
+        <_item value="P3">P3 (ponoko)</_item>
+        <_item value="P2">P2 (ponoko)</_item>
+        <_item value="P1">P1 (ponoko)</_item>
+        <_item value="levine">levine: 24x96</_item>
+    </param>
+
+    <param name="debug" type="boolean">
+        true
+    </param>
+
+    <effect>
+        <object-type>all</object-type>
+        <effects-menu>
+            <submenu _name="dbadb"/>
+        </effects-menu>
+    </effect>
+    <script>
+        <command reldir="extensions" interpreter="python">badge.py</command>
+    </script>
+</inkscape-extension>
